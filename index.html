@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Послание для Ханифа</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <div class="stars-bg"></div>
+
+  <!-- ШАГ 1: Конверт -->
+  <div id="envelope-screen" class="screen active">
+    <div class="envelope-wrapper" onclick="openEnvelope()">
+      <div class="envelope">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter-preview"></div>
+        <div class="heart-seal">❤️</div>
+      </div>
+      <p class="click-hint">Нажми на конверт, чтобы открыть 💌</p>
+    </div>
+  </div>
+
+  <!-- ШАГ 2: Письмо с таймером -->
+  <div id="letter-screen" class="screen">
+    <div class="letter-card">
+      <div class="letter-header">
+        <span class="letter-badge">Для Ханифа ✨</span>
+      </div>
+      <div class="letter-body">
+        <p class="greeting">Привет, Ханифа!</p>
+        <p class="text">
+          Я просто хотел сделать для тебя что-то необычное и улыбнуть тебя сегодня. 
+          Ты удивительный человек, с которым всегда легко и тепло. 
+          Спасибо тебе за твою искренность и твой замечательный характер! 🌟
+        </p>
+      </div>
+      <div class="timer-container">
+        <div class="timer-bar" id="timer-bar"></div>
+        <div class="timer-text">Заморозка через <span id="timer-seconds">10</span>с...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ШАГ 3: Ледяное сердце -->
+  <div id="ice-screen" class="screen">
+    <div class="ice-instruction" id="ice-instruction">
+      ❄️ Сердце замерзло! Нажимай на него, чтобы растопить лёд!
+    </div>
+    
+    <div class="heart-container" id="heart-container" onclick="meltIce(event)">
+      <!-- Само сердце -->
+      <div class="heart-main" id="heart-main">❤️</div>
+      
+      <!-- Ледяной панцирь -->
+      <div class="ice-shell" id="ice-shell">
+        <div class="ice-shimmer"></div>
+        <div class="ice-crack" id="ice-crack"></div>
+        <span class="snowflake-icon">❄️</span>
+      </div>
+    </div>
+
+    <div class="progress-container" id="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+      <div class="clicks-left" id="clicks-left">Осталось кликов: 10</div>
+    </div>
+  </div>
+
+  <!-- ШАГ 4: Финальное признание -->
+  <div id="final-screen" class="screen">
+    <div class="final-card">
+      <div class="sparkles">✨ 🎉 ✨</div>
+      <h1 class="final-text">Ханифачка моя 🥰</h1>
+      <p class="subtext">Лёд растаял, а тепло осталось с нами!</p>
+      <button class="restart-btn" onclick="restart()">Посмотреть ещё раз 🔄</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
